@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Instrument</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>New Instrument</h1>
+<form th:action="@{/instruments}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required step="any" />    </div>
+    <div>
+        <label for="genres">Genres:</label>
+        <input type="text" id="genres" name="genres" required />
+    </div>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

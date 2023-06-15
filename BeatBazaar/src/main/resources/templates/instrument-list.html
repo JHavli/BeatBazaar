@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrument List</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>Instrument List</h1>
+
+<a th:href="@{/instruments/new}">Add New Instrument</a>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Genres</th>
+    </tr>
+    <tr th:each="instrument : ${instruments}">
+        <td th:text="${instrument.name}"></td>
+        <td th:text="${instrument.price}"></td>
+        <td>
+            <ul>
+                <li th:each="genre : ${instrument.genres}" th:text="${genre}"></li>
+            </ul>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
